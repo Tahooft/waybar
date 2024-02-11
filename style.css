@@ -18,7 +18,7 @@ window#waybar.empty {
 }
 
 .topbar {
-    border-bottom: 3px solid rgba(100, 114, 125, 1);
+    border-bottom: 1px solid rgba(100, 114, 125, 1);
 }
 
 .bottombar {
@@ -26,7 +26,7 @@ window#waybar.empty {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 1px;
     background-color: transparent;
     color: #ffffff;
 }
@@ -47,7 +47,7 @@ window#waybar.empty {
 
 #mode {
     background-color: #64727D;
-    border-top: 3px solid #ffffff;
+    border-top: 1px solid #ffffff;
 }
 
 #backlight,
