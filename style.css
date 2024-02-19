@@ -82,6 +82,14 @@ window#waybar.empty {
     }
 }
 
+#workspaces button {
+    padding: 0px 5px;
+}
+
+#scratchpad button {
+    padding: 0px 0px;
+}
+
 #battery.bat2.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -105,3 +113,7 @@ window#waybar.empty {
     background-color: #64727D;
     box-shadow: inset 0 3px #ffffff;
 }
+
+/* #custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+} */
