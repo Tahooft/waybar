@@ -13,9 +13,8 @@
         "modules-center": ["sway/window"],
         "modules-right": ["pulseaudio", "battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "backlight", "idle_inhibitor", "network#vpn", "network#wifi", "network#ethernet", "network#disconnected","tray", "clock", "custom/poweroff"],
 
-        "sway/window": {
-            "format": "{} ",
-            "on-click": "swaymsg kill"
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
         },
         "sway/scratchpad": {
             "format": "{icon} {count}",
@@ -24,6 +23,29 @@
             "tooltip": true,
             "tooltip-format": "{app}: {title}"
         },
+
+        "sway/window": {
+            "format": "{} ",
+            "on-click": "swaymsg kill"
+        },
+
+        "pulseaudio": {
+            "scroll-step": 1,
+            "format": "{icon} {volume}%{format_source}",
+            "format-bluetooth": "{icon} {volume}%{format_source}",
+            "format-bluetooth-muted": " {icon}{format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "  {volume}%",
+            "format-source-muted": " ",
+            "format-icons": {
+                "headphone": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol"
+        },        
         "idle_inhibitor": {
             "format": "{icon}",
             "format-icons": {
@@ -133,30 +155,10 @@
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
             "on-click": "nm-connection-editor"
         },
-        "pulseaudio": {
-            "scroll-step": 1,
-            "format": "{icon} {volume}%{format_source}",
-            "format-bluetooth": "{icon} {volume}%{format_source}",
-            "format-bluetooth-muted": " {icon}{format_source}",
-            "format-muted": " {format_source}",
-            "format-source": "  {volume}%",
-            "format-source-muted": " ",
-            "format-icons": {
-                "headphone": "",
-                "phone": "",
-                "portable": "",
-                "car": "",
-                "default": ["", "", ""]
-            },
-            "on-click": "pavucontrol"
-        },
         "custom/poweroff": {
             "tooltip": false,
             "format": "",
             "on-click": "bash $HOME/.config/waybar/scripts/poweroff.sh"
-        },
-        "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
         }
     },
     {
