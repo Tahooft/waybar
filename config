@@ -168,7 +168,7 @@
     },
     {
         "bar_id": "bar-1",
-
+        "id":   "bar-1",
         "ipc": true,
         
         "name": "bottombar",
