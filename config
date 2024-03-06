@@ -10,7 +10,7 @@
         "height": 30,
         "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
         "modules-center": ["sway/window"],
-        "modules-right": ["pulseaudio", "battery#bat1", "battery#bat2", "disk", "memory", "cpu", "temperature", "backlight", "tray", "clock", "custom/poweroff"],
+        "modules-right": ["pulseaudio", "disk", "memory", "cpu", "temperature", "tray", "clock", "custom/poweroff"],
 
         "sway/workspaces": {
             "disable-scroll": false,
