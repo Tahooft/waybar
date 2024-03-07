@@ -10,7 +10,18 @@
         "height": 30,
         "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
         "modules-center": ["sway/window"],
-        "modules-right": ["pulseaudio", "disk", "memory", "cpu", "temperature", "tray", "clock", "custom/poweroff"],
+        "modules-right": ["custom/testing", "pulseaudio", "disk", "memory", "cpu", "temperature", "tray", "clock", "custom/poweroff"],
+
+        "custom/testing": {
+            "return-type": "json",
+            "signal": 13,
+            "interval": 3600,
+            "exec": "$HOME/.config/waybar/testing",
+            "on-click": "bash $HOME/.config/waybar/scripts/wallpaper.sh",
+            "on-click-right": "pkill --signal RTMIN+13 firefox"
+        },
+
+
 
         "sway/workspaces": {
             "disable-scroll": false,

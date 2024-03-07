@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+class=""
+tooltip=""
+text="Wallpaper"
+
+wallpaper=$(find ~/Pictures/Wallpapers/Using/  -type f | shuf -n 1)
+tooltip=$wallpaper
+
+if [[  "$SWAYSOCK" ]]; then
+cat <<EOF
+{"text": " $text", "tooltip": "$tooltip", "class": "$class" }
+EOF
+
+else # assume i3blocks:
+    echo "$tooltip"
+fi
+
+# otherwise waybar doesn't show the widget!!!!
+exit 0
+
+# tooltip="$text is date\n L:message R:Kill Firefox"
+
+# if type dnf &> /dev/null; then
+#     text=$( sudo dnf check-update -q | wc -l )
+# else
+#     text=$( xbps-install -Sun | wc -l )
+# fi
+
+# (( text > 50 )) && {
+#     class="warning"
+#     (( text > 100 )) && {
+#         class="error"
+#     }
+# }
+
+
+#     tooltip="$text packages to update with xbps-install -Su\n R:refresh (signal 13)"
+
+
+
+# Local Variables:
+# eval: (add-hook 'after-save-hook (lambda nil (shell-command "pkill --signal RTMIN+13 waybar")) nil 'local)
+# End:
