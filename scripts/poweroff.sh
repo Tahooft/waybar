@@ -10,9 +10,11 @@ case $(wofi -d -L 6 -l 3 -W 100 -x -100 -y 10 \
 EOF
 ) in
     "Shutdown")
+        pkill --signal RTMIN+13 firefox
         systemctl poweroff
         ;;
     "Reboot")
+        pkill --signal RTMIN+13 firefox
         systemctl reboot
         ;;
     "Sleep")
@@ -22,6 +24,7 @@ EOF
         loginctl lock-session
         ;;
     "Log off")
+        pkill --signal RTMIN+13 firefox
         swaymsg exit
         ;;
 esac
